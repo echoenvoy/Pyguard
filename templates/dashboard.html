@@ -409,6 +409,15 @@
 <script>
 let categoryChart, methodChart;
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 async function fetchJSON(url) {
   const r = await fetch(url, { cache: 'no-store' });
   if (!r.ok) {
@@ -418,6 +427,7 @@ async function fetchJSON(url) {
 }
 
 function categoryBadge(cat) {
+  const safeCat = escapeHtml(cat || 'Unknown');
   const map = {
     'SQL Injection': 'badge-sql',
     'XSS': 'badge-xss',
@@ -426,13 +436,13 @@ function categoryBadge(cat) {
     'Suspicious Input': 'badge-suspicious',
   };
   const cls = map[cat] || 'badge-ml';
-  return `<span class="badge ${cls}">${cat || 'Unknown'}</span>`;
+  return `<span class="badge ${cls}">${safeCat}</span>`;
 }
 
 function methodBadge(m) {
-  if (m === 'Regex') return `<span class="method-regex">Regex</span>`;
-  if (m === 'ML Classifier') return `<span class="method-ml">ML</span>`;
-  return `<span>${m}</span>`;
+  if (m === 'Regex') return '<span class="method-regex">Regex</span>';
+  if (m === 'ML Classifier') return '<span class="method-ml">ML</span>';
+  return `<span>${escapeHtml(m)}</span>`;
 }
 
 function timeAgo(iso) {
@@ -511,7 +521,7 @@ async function loadStats() {
     document.getElementById('top-ips').innerHTML = topIPs.length
       ? topIPs.map(({ip, count}) => `
         <div class="top-ip-row">
-          <span class="ip-text" style="min-width:120px;font-size:12px;font-family:var(--mono)">${ip}</span>
+          <span class="ip-text" style="min-width:120px;font-size:12px;font-family:var(--mono)">${escapeHtml(ip)}</span>
           <div class="ip-bar-wrap"><div class="ip-bar" style="width:${Math.round(count/max*100)}%"></div></div>
           <span class="ip-count">${count}</span>
         </div>`).join('')
@@ -532,10 +542,10 @@ async function loadAttacks() {
     tbody.innerHTML = attacks.map(a => `
       <tr>
         <td style="color:var(--muted);font-size:11px;white-space:nowrap">${timeAgo(a.timestamp)}</td>
-        <td><span class="ip-text">${a.ip}</span></td>
+        <td><span class="ip-text">${escapeHtml(a.ip)}</span></td>
         <td>${categoryBadge(a.category)}</td>
         <td>${methodBadge(a.detection_method)}</td>
-        <td><span class="payload-text" title="${a.payload}">${a.payload}</span></td>
+        <td><span class="payload-text" title="${escapeHtml(a.payload)}">${escapeHtml(a.payload)}</span></td>
       </tr>`).join('');
   } catch (err) {
     console.error('Failed to load attacks:', err);
@@ -554,10 +564,10 @@ async function loadBlacklist() {
     el.innerHTML = bl.map(({ip, remaining_min}) => `
       <div class="bl-item">
         <div>
-          <div class="bl-ip">${ip}</div>
+          <div class="bl-ip">${escapeHtml(ip)}</div>
           <div class="bl-exp">${remaining_min}m remaining</div>
         </div>
-        <button class="unban-btn" onclick="unbanIP('${ip}')">Unban</button>
+        <button class="unban-btn" onclick="unbanIP('${encodeURIComponent(ip)}')">Unban</button>
       </div>`).join('');
   } catch (err) {
     console.error('Failed to load blacklist:', err);
@@ -577,7 +587,8 @@ async function banIP() {
   loadBlacklist();
 }
 
-async function unbanIP(ip) {
+async function unbanIP(ipEncoded) {
+  const ip = decodeURIComponent(ipEncoded);
   await fetch('/admin/api/unban', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},

@@ -15,9 +15,7 @@ from ip_manager import is_blacklisted, record_strike, manual_ban, unban, get_bla
 app = Flask(__name__)
 app.secret_key = "flaskguard-secret-change-in-production"
 
-# ─────────────────────────────────────────────
 # Rate Limiter
-# ─────────────────────────────────────────────
 limiter = Limiter(
     key_func=get_remote_address,
     app=app,
@@ -25,9 +23,7 @@ limiter = Limiter(
     storage_uri="memory://",
 )
 
-# ─────────────────────────────────────────────
 # Security Middleware
-# ─────────────────────────────────────────────
 
 @app.before_request
 def security_middleware():
@@ -89,9 +85,7 @@ def security_middleware():
         return jsonify({"error": msg, "category": category}), 403
 
 
-# ─────────────────────────────────────────────
 # Demo Protected Routes
-# ─────────────────────────────────────────────
 
 @app.route("/")
 def index():
@@ -127,9 +121,7 @@ def comment():
     return jsonify({"message": "Comment posted", "text": text})
 
 
-# ─────────────────────────────────────────────
 # Admin Dashboard API
-# ─────────────────────────────────────────────
 
 @app.route("/admin")
 @limiter.exempt
@@ -179,9 +171,7 @@ def api_unban():
     return jsonify({"message": f"Unbanned {ip}"})
 
 
-# ─────────────────────────────────────────────
 # Test endpoint — fire fake attack events
-# ─────────────────────────────────────────────
 
 @app.route("/admin/api/simulate", methods=["POST"])
 @limiter.exempt
@@ -213,6 +203,6 @@ def simulate_attacks():
 
 if __name__ == "__main__":
     print("🛡  FlaskGuard WAF starting...")
-    print("   App:       http://127.0.0.1:5000")
-    print("   Dashboard: http://127.0.0.1:5000/admin")
+    # print("   App:       http://127.0.0.1:5000")
+    # print("   Dashboard: http://127.0.0.1:5000/admin")
     app.run(debug=True, port=5000)

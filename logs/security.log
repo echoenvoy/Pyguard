@@ -421,3 +421,436 @@
 2026-04-04 09:28:54,447 | INFO | 127.0.0.1 - - [04/Apr/2026 09:28:54] "GET /admin/api/blacklist HTTP/1.1" 200 -
 2026-04-04 09:28:54,455 | INFO | 127.0.0.1 - - [04/Apr/2026 09:28:54] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
 2026-04-04 09:28:54,524 | INFO | 127.0.0.1 - - [04/Apr/2026 09:28:54] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:29:04,440 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:04] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:29:04,452 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:04] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:29:04,456 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:04] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:29:04,602 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:29:04,603 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:04] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:29:14,444 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:14] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:29:14,477 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:14] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:29:14,481 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:14] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:29:14,541 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:29:14,542 | INFO | 127.0.0.1 - - [04/Apr/2026 09:29:14] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:30:00,434 | INFO | 127.0.0.1 - - [04/Apr/2026 09:30:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:30:00,481 | INFO | 127.0.0.1 - - [04/Apr/2026 09:30:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:30:00,486 | INFO | 127.0.0.1 - - [04/Apr/2026 09:30:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:30:00,569 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:30:00,570 | INFO | 127.0.0.1 - - [04/Apr/2026 09:30:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:31:00,469 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:31:00,526 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:31:00,530 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:31:00,618 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:31:00,620 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:31:55,013 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:55] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:31:55,025 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:55] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:31:55,026 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:55] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:31:55,061 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:31:55,062 | INFO | 127.0.0.1 - - [04/Apr/2026 09:31:55] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:32:01,185 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:01] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:32:01,275 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:01] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:32:01,290 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:01] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:32:01,293 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:01] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:32:01,407 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:01] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:32:11,407 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:11] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:32:11,409 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:11] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:32:11,411 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:11] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:32:11,439 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:11] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:32:21,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:21] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:32:21,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:21] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:32:21,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:21] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:32:21,433 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:21] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:32:31,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:31] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:32:31,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:31] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:32:31,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:31] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:32:31,439 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:31] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:32:41,411 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:41] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:32:41,414 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:41] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:32:41,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:41] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:32:41,430 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:41] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:32:51,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:51] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:32:51,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:51] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:32:51,422 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:51] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:32:51,436 | INFO | 127.0.0.1 - - [04/Apr/2026 09:32:51] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:33:01,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:01] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:33:01,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:01] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:33:01,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:01] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:33:01,432 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:01] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:33:11,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:11] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:33:11,417 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:11] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:33:11,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:11] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:33:11,431 | INFO | 127.0.0.1 - - [04/Apr/2026 09:33:11] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:34:00,413 | INFO | 127.0.0.1 - - [04/Apr/2026 09:34:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:34:00,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:34:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:34:00,417 | INFO | 127.0.0.1 - - [04/Apr/2026 09:34:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:34:00,431 | INFO | 127.0.0.1 - - [04/Apr/2026 09:34:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:35:00,425 | INFO | 127.0.0.1 - - [04/Apr/2026 09:35:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:35:00,431 | INFO | 127.0.0.1 - - [04/Apr/2026 09:35:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:35:00,432 | INFO | 127.0.0.1 - - [04/Apr/2026 09:35:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:35:00,459 | INFO | 127.0.0.1 - - [04/Apr/2026 09:35:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:36:00,414 | INFO | 127.0.0.1 - - [04/Apr/2026 09:36:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:36:00,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:36:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:36:00,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:36:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:36:00,431 | INFO | 127.0.0.1 - - [04/Apr/2026 09:36:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:37:00,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:37:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:37:00,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:37:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:37:00,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:37:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:37:00,442 | INFO | 127.0.0.1 - - [04/Apr/2026 09:37:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:38:00,407 | INFO | 127.0.0.1 - - [04/Apr/2026 09:38:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:38:00,409 | INFO | 127.0.0.1 - - [04/Apr/2026 09:38:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:38:00,410 | INFO | 127.0.0.1 - - [04/Apr/2026 09:38:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:38:00,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:38:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:39:00,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:39:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:39:00,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:39:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:39:00,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:39:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:39:00,437 | INFO | 127.0.0.1 - - [04/Apr/2026 09:39:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:40:00,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:40:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:40:00,422 | INFO | 127.0.0.1 - - [04/Apr/2026 09:40:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:40:00,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:40:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:40:00,457 | INFO | 127.0.0.1 - - [04/Apr/2026 09:40:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:41:00,413 | INFO | 127.0.0.1 - - [04/Apr/2026 09:41:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:41:00,417 | INFO | 127.0.0.1 - - [04/Apr/2026 09:41:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:41:00,417 | INFO | 127.0.0.1 - - [04/Apr/2026 09:41:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:41:00,432 | INFO | 127.0.0.1 - - [04/Apr/2026 09:41:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:42:00,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:42:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:42:00,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:42:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:42:00,425 | INFO | 127.0.0.1 - - [04/Apr/2026 09:42:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:42:00,443 | INFO | 127.0.0.1 - - [04/Apr/2026 09:42:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:43:00,422 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:43:00,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:43:00,426 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:43:00,438 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:43:41,053 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:41] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:43:41,055 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:41] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:43:41,057 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:41] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:43:41,071 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:41] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:43:45,859 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:45] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:43:45,931 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:45] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:43:45,936 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:45] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:43:45,940 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:45] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:43:46,027 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:46] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:43:52,688 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:52] "POST /admin/api/unban HTTP/1.1" 200 -
+2026-04-04 09:43:56,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:56] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:43:56,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:56] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:43:56,427 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:56] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:43:56,461 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:43:56,462 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:56] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:43:59,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:43:59] "GET / HTTP/1.1" 200 -
+2026-04-04 09:44:06,429 | INFO | 127.0.0.1 - - [04/Apr/2026 09:44:06] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:44:06,456 | INFO | 127.0.0.1 - - [04/Apr/2026 09:44:06] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:44:06,458 | INFO | 127.0.0.1 - - [04/Apr/2026 09:44:06] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:44:06,483 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:44:06,483 | INFO | 127.0.0.1 - - [04/Apr/2026 09:44:06] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:03,991 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:03] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:04,008 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:04] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:04,010 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:04] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:04,040 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:45:04,041 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:04] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:05,941 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:05] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:05,954 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:05] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:05,955 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:05] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:05,991 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:45:05,991 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:05] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:16,422 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:16] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:16,436 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:16] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:16,437 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:16] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:16,456 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:45:16,457 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:16] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:26,414 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:26] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:26,426 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:26] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:26,427 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:26] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:26,443 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:26] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:36,410 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:36] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:36,413 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:36] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:36,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:36] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:36,430 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:36] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:46,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:46] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:46,425 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:46] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:46,427 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:46] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:46,440 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:46] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:45:56,417 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:56] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:45:56,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:56] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:45:56,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:56] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:45:56,438 | INFO | 127.0.0.1 - - [04/Apr/2026 09:45:56] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:46:06,412 | INFO | 127.0.0.1 - - [04/Apr/2026 09:46:06] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:46:06,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:46:06] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:46:06,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:46:06] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:46:06,432 | INFO | 127.0.0.1 - - [04/Apr/2026 09:46:06] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:47:00,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:47:00,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:47:00,425 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:47:00,455 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:00] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:47:30,991 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:30] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:47:30,993 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:30] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:47:30,995 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:30] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:47:31,009 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:31] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:47:36,408 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:36] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:47:36,410 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:36] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:47:36,413 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:36] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:47:36,427 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:36] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:47:46,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:46] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:47:46,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:46] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:47:46,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:46] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:47:46,436 | INFO | 127.0.0.1 - - [04/Apr/2026 09:47:46] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:48:28,883 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:28] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:48:28,887 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:28] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:48:28,889 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:28] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:48:28,906 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:28] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:48:36,366 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:36] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:48:36,369 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:36] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:48:36,371 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:36] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:48:36,386 | INFO | 127.0.0.1 - - [04/Apr/2026 09:48:36] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:49:37,245 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:37] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:49:37,248 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:37] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:49:37,251 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:37] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:49:37,257 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:37] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:49:46,408 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:46] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:49:46,410 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:46] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:49:46,412 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:46] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:49:46,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:46] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:49:56,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:56] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:49:56,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:56] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:49:56,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:56] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:49:56,441 | INFO | 127.0.0.1 - - [04/Apr/2026 09:49:56] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:50:06,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:06] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:50:06,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:06] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:50:06,419 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:06] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:50:06,431 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:06] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:50:09,835 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:09] "[31m[1mGET /search?q=admin'%20OR%20'1'%3D'1 HTTP/1.1[0m" 403 -
+2026-04-04 09:50:15,945 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:15] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:50:15,948 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:15] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:50:15,950 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:15] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:50:15,974 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:15] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:50:24,602 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:24] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:50:24,666 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:24] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:50:24,668 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:24] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:50:24,671 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:24] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:50:24,764 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:24] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:50:30,704 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:30] "POST /admin/api/unban HTTP/1.1" 200 -
+2026-04-04 09:50:30,709 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:30] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:50:34,674 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:34] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:50:34,677 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:34] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:50:34,679 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:34] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:50:34,708 | WARNING | [Suspicious Input] 127.0.0.1 -> GET /x | payload: /x? | via: ML Classifier
+2026-04-04 09:50:34,708 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:34] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:50:35,486 | WARNING | [SQL Injection] 127.0.0.1 -> GET /search | payload: {'q': "admin' OR '1'='1"} /search?q=admin%27%20OR%20%271%27%3D%271 | via: Regex
+2026-04-04 09:50:35,486 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:35] "[31m[1mGET /search?q=admin'%20OR%20'1'%3D'1 HTTP/1.1[0m" 403 -
+2026-04-04 09:50:47,562 | WARNING | [SQL Injection] 127.0.0.1 -> GET /search | payload: {'q': "' UNION SELECT username,password FROM users--"} /search?q=%27%20UNION%20S | via: Regex
+2026-04-04 09:50:47,563 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:47] "[31m[1mGET /search?q='%20UNION%20SELECT%20username,password%20FROM%20users-- HTTP/1.1[0m" 403 -
+2026-04-04 09:50:53,935 | WARNING | [XSS] 127.0.0.1 -> GET /search | payload: {'q': '<img src=x onerror=alert(1)>'} /search?q=%3Cimg%20src%3Dx%20onerror%3Dale | via: Regex
+2026-04-04 09:50:53,935 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:53] "[31m[1mGET /search?q=<img%20src%3Dx%20onerror%3Dalert(1)> HTTP/1.1[0m" 403 -
+2026-04-04 09:50:59,208 | WARNING | [XSS] 127.0.0.1 -> GET /search | payload: {'q': '<svg onload=alert(1)>'} /search?q=%3Csvg%20onload%3Dalert%281%29%3E | via: Regex
+2026-04-04 09:50:59,208 | INFO | 127.0.0.1 - - [04/Apr/2026 09:50:59] "[31m[1mGET /search?q=<svg%20onload%3Dalert(1)> HTTP/1.1[0m" 403 -
+2026-04-04 09:51:04,079 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:04] "[31m[1mGET /search?q=../../../etc/passwd HTTP/1.1[0m" 403 -
+2026-04-04 09:51:17,037 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:17] "POST /admin/api/unban HTTP/1.1" 200 -
+2026-04-04 09:51:24,397 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:24] "GET /search?q={{7*7}} HTTP/1.1" 200 -
+2026-04-04 09:51:41,501 | WARNING | [Path Traversal] 127.0.0.1 -> GET /search | payload: {'q': ';cat /etc/passwd'} /search?q=%3Bcat%20%2Fetc%2Fpasswd | via: Regex
+2026-04-04 09:51:41,501 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:41] "[31m[1mGET /search?q=;cat%20/etc/passwd HTTP/1.1[0m" 403 -
+2026-04-04 09:51:47,478 | WARNING | [Path Traversal] 127.0.0.1 -> GET /search | payload: {'q': '../../secret.txt'} /search?q=%2e%2e%2f%2e%2e%2fsecret.txt | via: Regex
+2026-04-04 09:51:47,479 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:47] "[31m[1mGET /search?q=../../secret.txt HTTP/1.1[0m" 403 -
+2026-04-04 09:51:52,737 | WARNING | [XSS] 127.0.0.1 -> GET /search | payload: {'q': '<img src=x onerror=alert(1)>'} /search?q=%3Cimg%20src%3Dx%20onerror%3Dale | via: Regex
+2026-04-04 09:51:52,737 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:52] "[31m[1mGET /search?q=<img%20src%3Dx%20onerror%3Dalert(1)> HTTP/1.1[0m" 403 -
+2026-04-04 09:51:58,017 | WARNING | [SQL Injection] 127.0.0.1 -> GET /search | payload: {'q': "' UNION SELECT username,password FROM users--"} /search?q=%27%20UNION%20S | via: Regex
+2026-04-04 09:51:58,018 | INFO | 127.0.0.1 - - [04/Apr/2026 09:51:58] "[31m[1mGET /search?q='%20UNION%20SELECT%20username,password%20FROM%20users-- HTTP/1.1[0m" 403 -
+2026-04-04 09:52:02,370 | WARNING | [Path Traversal] 127.0.0.1 -> GET /search | payload: {'q': '../../../etc/passwd'} /search?q=..%2F..%2F..%2Fetc%2Fpasswd | via: Regex
+2026-04-04 09:52:02,371 | INFO | 127.0.0.1 - - [04/Apr/2026 09:52:02] "[31m[1mGET /search?q=../../../etc/passwd HTTP/1.1[0m" 403 -
+2026-04-04 09:52:06,728 | INFO | 127.0.0.1 - - [04/Apr/2026 09:52:06] "[31m[1mGET /search?q=%26%26id HTTP/1.1[0m" 403 -
+2026-04-04 09:52:26,885 | INFO | 127.0.0.1 - - [04/Apr/2026 09:52:26] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:52:26,905 | INFO | 127.0.0.1 - - [04/Apr/2026 09:52:26] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:52:26,907 | INFO | 127.0.0.1 - - [04/Apr/2026 09:52:26] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:52:26,956 | INFO | 127.0.0.1 - - [04/Apr/2026 09:52:26] "[31m[1mGET /x HTTP/1.1[0m" 403 -
+2026-04-04 09:53:38,092 | INFO | 127.0.0.1 - - [04/Apr/2026 09:53:38] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:53:59,422 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-04 09:53:59,422 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-04 09:53:59,425 | INFO |  * Restarting with stat
+2026-04-04 09:54:01,912 | WARNING |  * Debugger is active!
+2026-04-04 09:54:01,915 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 09:54:03,011 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:03] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:54:03,103 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:03] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:03,107 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:03] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:03,109 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:03] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:04,267 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:04] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:54:04,324 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:04] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:04,326 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:04] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:04,328 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:04] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:10,731 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:10] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:54:10,791 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:10] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:10,795 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:10] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:10,796 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:10] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:13,558 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:13] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:13,563 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:13] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:13,566 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:13] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:14,203 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:14] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:14,205 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:14] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:14,207 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:14] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:14,824 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:14] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:14,827 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:14] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:14,828 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:14] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:16,551 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:16] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:54:16,614 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:16] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:16,617 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:16] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:16,619 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:16] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:26,590 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:26] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:26,592 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:26] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:26,594 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:26] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:35,874 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-04 09:54:35,874 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-04 09:54:35,876 | INFO |  * Restarting with stat
+2026-04-04 09:54:36,585 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:36] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:36,588 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:36] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:36,591 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:36] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:38,722 | WARNING |  * Debugger is active!
+2026-04-04 09:54:38,725 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 09:54:47,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:47] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:47,423 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:47] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:47,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:47] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:54:51,664 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:51] "[31m[1mGET /search?q=admin'%20OR%20'1'%3D'1 HTTP/1.1[0m" 403 -
+2026-04-04 09:54:57,414 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:57] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:54:57,415 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:57] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:54:57,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:54:57] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:55:03,307 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:03] "POST /admin/api/unban HTTP/1.1" 200 -
+2026-04-04 09:55:07,416 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:07] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:55:07,418 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:07] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:55:07,420 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:07] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:55:15,808 | WARNING | [SQL Injection] 127.0.0.1 -> GET /search | payload: {'q': "admin' OR '1'='1"} /search?q=admin%27%20OR%20%271%27%3D%271 | via: Regex
+2026-04-04 09:55:15,809 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:15] "[31m[1mGET /search?q=admin'%20OR%20'1'%3D'1 HTTP/1.1[0m" 403 -
+2026-04-04 09:55:17,428 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:17] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:55:17,446 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:17] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:55:17,447 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:17] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:55:24,191 | WARNING | [XSS] 127.0.0.1 -> GET /search | payload: {'q': '<img src=x onerror=alert(1)>'} /search?q=%3Cimg%20src%3Dx%20onerror%3Dale | via: Regex
+2026-04-04 09:55:24,191 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:24] "[31m[1mGET /search?q=<img%20src%3Dx%20onerror%3Dalert(1)> HTTP/1.1[0m" 403 -
+2026-04-04 09:55:27,432 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:27] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:55:27,446 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:27] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:55:27,448 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:27] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:55:37,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:37] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:55:37,425 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:37] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:55:37,426 | INFO | 127.0.0.1 - - [04/Apr/2026 09:55:37] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:56:00,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:56:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:56:00,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:56:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:56:00,425 | INFO | 127.0.0.1 - - [04/Apr/2026 09:56:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:57:00,433 | INFO | 127.0.0.1 - - [04/Apr/2026 09:57:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:57:00,435 | INFO | 127.0.0.1 - - [04/Apr/2026 09:57:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:57:00,436 | INFO | 127.0.0.1 - - [04/Apr/2026 09:57:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:58:00,434 | INFO | 127.0.0.1 - - [04/Apr/2026 09:58:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:58:00,438 | INFO | 127.0.0.1 - - [04/Apr/2026 09:58:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:58:00,441 | INFO | 127.0.0.1 - - [04/Apr/2026 09:58:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:58:41,701 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 09:58:41,921 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 09:58:42,024 | INFO |  * Restarting with stat
+2026-04-04 09:58:42,256 | INFO |  * Restarting with stat
+2026-04-04 09:58:45,098 | WARNING |  * Debugger is active!
+2026-04-04 09:58:45,101 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 09:58:48,631 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-04 09:58:48,632 | INFO | [33mPress CTRL+C to quit[0m
+2026-04-04 09:58:48,633 | INFO |  * Restarting with stat
+2026-04-04 09:58:50,881 | WARNING |  * Debugger is active!
+2026-04-04 09:58:50,883 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 09:59:00,421 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:00] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:00,424 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:00] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:00,427 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:00] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:21,069 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:21] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:21,075 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:21] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:21,076 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:21] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:23,144 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:23] "GET /admin HTTP/1.1" 200 -
+2026-04-04 09:59:23,208 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:23] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:23,210 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:23] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:23,212 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:23] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:25,528 | WARNING | [Path Traversal] 192.168.1.10 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,551 | WARNING | [XSS] 172.16.0.3 -> POST /login | payload: eval(atob('test')) | via: ML Classifier
+2026-04-04 09:59:25,565 | WARNING | [SQL Injection] 192.168.1.10 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,578 | WARNING | [Path Traversal] 10.0.0.55 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,592 | WARNING | [SQL Injection] 192.168.1.10 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,606 | WARNING | [XSS] 192.168.1.10 -> POST /login | payload: <script>alert('xss')</script> | via: Regex
+2026-04-04 09:59:25,625 | WARNING | [Path Traversal] 203.0.113.42 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,643 | WARNING | [SQL Injection] 192.168.1.10 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,661 | WARNING | [SQL Injection] 10.0.0.55 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,677 | WARNING | [Path Traversal] 203.0.113.42 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,694 | WARNING | [XSS] 10.0.0.55 -> POST /login | payload: eval(atob('test')) | via: ML Classifier
+2026-04-04 09:59:25,711 | WARNING | [SQL Injection] 172.16.0.3 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,728 | WARNING | [Path Traversal] 172.16.0.3 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,744 | WARNING | [XSS] 172.16.0.3 -> POST /login | payload: eval(atob('test')) | via: ML Classifier
+2026-04-04 09:59:25,761 | WARNING | [SQL Injection] 203.0.113.42 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,778 | WARNING | [Path Traversal] 172.16.0.3 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,795 | WARNING | [XSS] 172.16.0.3 -> POST /login | payload: <script>alert('xss')</script> | via: Regex
+2026-04-04 09:59:25,812 | WARNING | [Path Traversal] 10.0.0.55 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:25,829 | WARNING | [XSS] 192.168.1.10 -> POST /login | payload: <script>alert('xss')</script> | via: Regex
+2026-04-04 09:59:25,846 | WARNING | [SQL Injection] 192.168.1.10 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:25,847 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:25] "POST /admin/api/simulate HTTP/1.1" 200 -
+2026-04-04 09:59:25,855 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:25] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:25,871 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:25] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:25,872 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:25] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:33,220 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:33] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:33,221 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:33] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:33,223 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:33] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:43,210 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:43] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:43,214 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:43] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:43,217 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:43] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:52,893 | WARNING | [SQL Injection] 172.16.0.3 -> POST /login | payload: ' OR 1=1 -- | via: Regex
+2026-04-04 09:59:52,913 | WARNING | [Command Injection] 172.16.0.3 -> POST /login | payload: ; ls -la | via: Regex
+2026-04-04 09:59:52,930 | WARNING | [SQL Injection] 203.0.113.42 -> POST /login | payload: ' OR 1=1 -- | via: Regex
+2026-04-04 09:59:52,947 | WARNING | [XSS] 10.0.0.55 -> POST /login | payload: eval(atob('test')) | via: ML Classifier
+2026-04-04 09:59:52,963 | WARNING | [SQL Injection] 10.0.0.55 -> POST /login | payload: ' OR 1=1 -- | via: Regex
+2026-04-04 09:59:52,981 | WARNING | [XSS] 10.0.0.55 -> POST /login | payload: <script>alert('xss')</script> | via: Regex
+2026-04-04 09:59:52,998 | WARNING | [Command Injection] 172.16.0.3 -> POST /login | payload: ; ls -la | via: Regex
+2026-04-04 09:59:53,015 | WARNING | [SQL Injection] 172.16.0.3 -> POST /login | payload: ' OR 1=1 -- | via: Regex
+2026-04-04 09:59:53,037 | WARNING | [SQL Injection] 10.0.0.55 -> POST /login | payload: ' OR 1=1 -- | via: Regex
+2026-04-04 09:59:53,055 | WARNING | [XSS] 192.168.1.10 -> POST /login | payload: <script>alert('xss')</script> | via: Regex
+2026-04-04 09:59:53,072 | WARNING | [SQL Injection] 203.0.113.42 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:53,090 | WARNING | [Path Traversal] 203.0.113.42 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:53,107 | WARNING | [Command Injection] 192.168.1.10 -> POST /login | payload: ; ls -la | via: Regex
+2026-04-04 09:59:53,124 | WARNING | [XSS] 203.0.113.42 -> POST /login | payload: eval(atob('test')) | via: ML Classifier
+2026-04-04 09:59:53,141 | WARNING | [SQL Injection] 10.0.0.55 -> POST /login | payload: ' AND SLEEP(5)-- | via: ML Classifier
+2026-04-04 09:59:53,158 | WARNING | [XSS] 10.0.0.55 -> POST /login | payload: <script>alert('xss')</script> | via: Regex
+2026-04-04 09:59:53,176 | WARNING | [Command Injection] 10.0.0.55 -> POST /login | payload: ; ls -la | via: Regex
+2026-04-04 09:59:53,193 | WARNING | [Path Traversal] 203.0.113.42 -> POST /login | payload: ../../etc/passwd | via: Regex
+2026-04-04 09:59:53,212 | WARNING | [Command Injection] 172.16.0.3 -> POST /login | payload: ; ls -la | via: Regex
+2026-04-04 09:59:53,216 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:53,231 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:53,238 | WARNING | [Command Injection] 203.0.113.42 -> POST /login | payload: ; ls -la | via: Regex
+2026-04-04 09:59:53,238 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "POST /admin/api/simulate HTTP/1.1" 200 -
+2026-04-04 09:59:53,255 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "GET /admin/api/blacklist HTTP/1.1" 200 -
+2026-04-04 09:59:53,261 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 09:59:53,263 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "GET /admin/api/stats HTTP/1.1" 200 -
+2026-04-04 09:59:53,267 | INFO | 127.0.0.1 - - [04/Apr/2026 09:59:53] "GET /admin/api/attacks?limit=30 HTTP/1.1" 200 -
+2026-04-04 10:00:12,507 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:00:12,711 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:00:12,823 | INFO |  * Restarting with stat
+2026-04-04 10:00:13,029 | INFO |  * Restarting with stat
+2026-04-04 10:00:15,505 | WARNING |  * Debugger is active!
+2026-04-04 10:00:15,508 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:00:15,615 | WARNING |  * Debugger is active!
+2026-04-04 10:00:15,618 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:00:55,845 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:00:55,996 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:00:56,148 | INFO |  * Restarting with stat
+2026-04-04 10:00:56,295 | INFO |  * Restarting with stat
+2026-04-04 10:00:58,774 | WARNING |  * Debugger is active!
+2026-04-04 10:00:58,777 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:00:58,835 | WARNING |  * Debugger is active!
+2026-04-04 10:00:58,839 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:01:07,871 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:01:07,907 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:01:08,222 | INFO |  * Restarting with stat
+2026-04-04 10:01:08,246 | INFO |  * Restarting with stat
+2026-04-04 10:01:12,107 | WARNING |  * Debugger is active!
+2026-04-04 10:01:12,110 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:01:12,297 | WARNING |  * Debugger is active!
+2026-04-04 10:01:12,301 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:01:15,157 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:01:15,351 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:01:15,526 | INFO |  * Restarting with stat
+2026-04-04 10:01:15,683 | INFO |  * Restarting with stat
+2026-04-04 10:01:18,088 | WARNING |  * Debugger is active!
+2026-04-04 10:01:18,091 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:01:18,183 | WARNING |  * Debugger is active!
+2026-04-04 10:01:18,186 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:01:39,314 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:01:39,349 | INFO |  * Detected change in 'C:\\Users\\Hamza\\Downloads\\FlaskGuard-main\\FlaskGuard-main\\FlaskGuard\\app.py', reloading
+2026-04-04 10:01:39,636 | INFO |  * Restarting with stat
+2026-04-04 10:01:39,669 | INFO |  * Restarting with stat
+2026-04-04 10:01:42,442 | WARNING |  * Debugger is active!
+2026-04-04 10:01:42,442 | WARNING |  * Debugger is active!
+2026-04-04 10:01:42,445 | INFO |  * Debugger PIN: 464-979-358
+2026-04-04 10:01:42,446 | INFO |  * Debugger PIN: 464-979-358
