@@ -1,0 +1,101 @@
+[
+  {
+    "timestamp": "2026-04-04T08:10:25.458032",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': \"admin' OR '1'='1\"} /search?q=admin%27%20OR%20%271%27%3D%271",
+    "category": "SQL Injection",
+    "detection_method": "Regex",
+    "auto_banned": false
+  },
+  {
+    "timestamp": "2026-04-04T08:10:45.534431",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': \"' UNION SELECT username,password FROM users--\"} /search?q=%27%20UNION%20SELECT%20username%2Cpassword%20FROM%20users--",
+    "category": "SQL Injection",
+    "detection_method": "Regex",
+    "auto_banned": false
+  },
+  {
+    "timestamp": "2026-04-04T08:11:01.654798",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': \"' AND SLEEP(5)--\"} /search?q=%27%20AND%20SLEEP%285%29--",
+    "category": "SQL Injection",
+    "detection_method": "Regex",
+    "auto_banned": true
+  },
+  {
+    "timestamp": "2026-04-04T08:14:43.990148",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': '<img src=x onerror=alert(1)>'} /search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E",
+    "category": "XSS",
+    "detection_method": "Regex",
+    "auto_banned": false
+  },
+  {
+    "timestamp": "2026-04-04T08:14:51.560934",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': '<svg onload=alert(1)>'} /search?q=%3Csvg%20onload%3Dalert%281%29%3E",
+    "category": "XSS",
+    "detection_method": "Regex",
+    "auto_banned": false
+  },
+  {
+    "timestamp": "2026-04-04T08:14:57.869819",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': 'javascript:alert(1)'} /search?q=javascript%3Aalert%281%29",
+    "category": "XSS",
+    "detection_method": "Regex",
+    "auto_banned": false
+  },
+  {
+    "timestamp": "2026-04-04T08:15:04.204618",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': '../../../etc/passwd'} /search?q=..%2F..%2F..%2Fetc%2Fpasswd",
+    "category": "Path Traversal",
+    "detection_method": "Regex",
+    "auto_banned": false
+  },
+  {
+    "timestamp": "2026-04-04T08:15:10.293856",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/search",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.7920",
+    "payload": "{'q': '..\\\\..\\\\..\\\\Windows\\\\win.ini'} /search?q=..%5C..%5C..%5CWindows%5Cwin.ini",
+    "category": "Path Traversal",
+    "detection_method": "Regex",
+    "auto_banned": true
+  },
+  {
+    "timestamp": "2026-04-04T08:29:04.598320",
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "path": "/x",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "payload": "/x?",
+    "category": "Suspicious Input",
+    "detection_method": "ML Classifier",
+    "auto_banned": false
+  }
+]

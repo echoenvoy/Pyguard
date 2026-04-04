@@ -1,0 +1,39 @@
+# SQL Injection variants
+curl "http://127.0.0.1:5000/search?q=admin%27%20OR%20%271%27%3D%271"
+curl "http://127.0.0.1:5000/search?q=%27%20UNION%20SELECT%20username%2Cpassword%20FROM%20users--"
+curl "http://127.0.0.1:5000/search?q=%27%20AND%20SLEEP%285%29--"
+
+# XSS variants
+curl "http://127.0.0.1:5000/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E"
+curl "http://127.0.0.1:5000/search?q=%3Csvg%20onload%3Dalert%281%29%3E"
+curl "http://127.0.0.1:5000/search?q=javascript%3Aalert%281%29"
+
+# Path traversal variants
+curl "http://127.0.0.1:5000/search?q=..%2F..%2F..%2Fetc%2Fpasswd"
+curl "http://127.0.0.1:5000/search?q=..%5C..%5C..%5CWindows%5Cwin.ini"
+curl "http://127.0.0.1:5000/search?q=%2e%2e%2f%2e%2e%2fsecret.txt"
+
+# Command injection style strings
+curl "http://127.0.0.1:5000/search?q=%3Bcat%20%2Fetc%2Fpasswd"
+curl "http://127.0.0.1:5000/search?q=%7Cwhoami"
+curl "http://127.0.0.1:5000/search?q=%26%26id"
+
+# SSTI-like probes
+curl "http://127.0.0.1:5000/search?q=%7B%7B7*7%7D%7D"
+curl "http://127.0.0.1:5000/search?q=%24%7B7*7%7D"
+
+
+#unbin an ip adress :
+Invoke-RestMethod -Method POST -Uri "http://127.0.0.1:5000/admin/api/unban" -ContentType "application/json" -Body (@{ ip = "127.0.0.1" } | ConvertTo-Json -Compress)
+
+
+#Reset data :
+Set-Location "path/to/u/project"
+
+# Ensure logs folder exists
+New-Item -ItemType Directory -Force -Path ".\logs" | Out-Null
+
+# Reset persisted data
+Set-Content ".\logs\attacks.json" "[]"
+Set-Content ".\logs\blacklist.json" "{}"
+Set-Content ".\logs\security.log" "

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlaskGuard — WAF Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070b0f; --accent: #00ff88; --accent2: #ff4466;
+    --text: #e6edf3; --muted: #7d8590;
+    --surface: #0d1117; --border: #21262d;
+    --mono: 'Space Mono', monospace; --sans: 'Syne', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height:100vh; }
+  body::before {
+    content:''; position:fixed; inset:0;
+    background-image: linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events:none;
+  }
+  .container { max-width:900px; margin:0 auto; padding:80px 32px; text-align:center; position:relative; z-index:1; }
+  .shield { font-size:80px; margin-bottom:24px; filter: drop-shadow(0 0 30px rgba(0,255,136,0.4)); }
+  h1 { font-size:56px; font-weight:800; letter-spacing:-2px; margin-bottom:16px; }
+  h1 span { color: var(--accent); }
+  .subtitle { font-size:18px; color: var(--muted); margin-bottom:48px; line-height:1.6; }
+  .tags { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:64px; }
+  .tag {
+    padding:6px 16px; border-radius:20px; font-family:var(--mono); font-size:12px;
+    border: 1px solid;
+  }
+  .tag-green { border-color:var(--accent); color:var(--accent); background:rgba(0,255,136,0.05); }
+  .tag-red { border-color:var(--accent2); color:var(--accent2); background:rgba(255,68,102,0.05); }
+  .tag-blue { border-color:#4488ff; color:#4488ff; background:rgba(68,136,255,0.05); }
+  .tag-orange { border-color:#ffaa00; color:#ffaa00; background:rgba(255,170,0,0.05); }
+
+  .demo-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius:16px; padding:32px; margin-bottom:24px; text-align:left;
+  }
+  .demo-title { font-size:13px; font-family:var(--mono); color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; }
+  .input-row { display:flex; gap:12px; margin-bottom:16px; }
+  .input {
+    flex:1; padding:10px 16px;
+    background:rgba(255,255,255,0.05); border:1px solid var(--border);
+    border-radius:8px; color:var(--text); font-family:var(--mono); font-size:13px; outline:none;
+    transition: border-color .2s;
+  }
+  .input:focus { border-color: var(--accent); }
+  .btn {
+    padding:10px 24px; border-radius:8px; font-family:var(--mono); font-size:13px;
+    cursor:pointer; transition:all .2s; border:none;
+    background: var(--accent); color:#000; font-weight:700;
+  }
+  .btn:hover { filter:brightness(1.1); }
+  .btn-red { background:var(--accent2); color:#fff; }
+  .result {
+    padding:12px 16px; border-radius:8px; font-family:var(--mono); font-size:13px;
+    min-height:44px; border:1px solid var(--border);
+  }
+  .result.ok { border-color:var(--accent); color:var(--accent); background:rgba(0,255,136,0.05); }
+  .result.bad { border-color:var(--accent2); color:var(--accent2); background:rgba(255,68,102,0.05); }
+
+  .payload-chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .chip {
+    padding:4px 12px; border-radius:4px; font-family:var(--mono); font-size:11px;
+    border:1px solid var(--border); color:var(--muted); cursor:pointer; transition:all .2s;
+  }
+  .chip:hover { border-color:var(--accent2); color:var(--accent2); }
+
+  .cta { margin-top:48px; }
+  .cta a {
+    display:inline-block; padding:14px 32px; border-radius:10px;
+    background:var(--accent); color:#000; font-weight:800; font-size:15px;
+    text-decoration:none; transition:all .2s;
+  }
+  .cta a:hover { filter:brightness(1.1); transform:translateY(-2px); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="shield">🛡️</div>
+  <h1>Flask<span>Guard</span></h1>
+  <p class="subtitle">A lightweight Web Application Firewall built with Flask.<br>Regex + ML-powered attack detection, rate limiting, and IP blacklisting.</p>
+
+  <div class="tags">
+    <span class="tag tag-green">SQL Injection</span>
+    <span class="tag tag-red">XSS Detection</span>
+    <span class="tag tag-blue">Path Traversal</span>
+    <span class="tag tag-orange">Command Injection</span>
+    <span class="tag tag-green">ML Classifier</span>
+    <span class="tag tag-red">Rate Limiting</span>
+    <span class="tag tag-blue">IP Blacklist</span>
+  </div>
+
+  <!-- Live tester -->
+  <div class="demo-box">
+    <div class="demo-title">⚡ Live Attack Tester — try the /search endpoint</div>
+    <div class="payload-chips">
+      <span class="chip" onclick="setPayload(this.textContent)">' OR 1=1 --</span>
+      <span class="chip" onclick="setPayload(this.textContent)">UNION SELECT password</span>
+      <span class="chip" onclick="setPayload(this.textContent)"><script>alert(1)</script></span>
+      <span class="chip" onclick="setPayload(this.textContent)">../../etc/passwd</span>
+      <span class="chip" onclick="setPayload(this.textContent)">; ls -la</span>
+      <span class="chip" onclick="setPayload(this.textContent)">hello world</span>
+    </div>
+    <div class="input-row">
+      <input class="input" id="search-input" placeholder="Enter search query or attack payload..." value="hello world" />
+      <button class="btn" onclick="testSearch()">Send</button>
+      <button class="btn btn-red" onclick="testAttack()">⚡ Attack</button>
+    </div>
+    <div class="result" id="search-result">Results will appear here...</div>
+  </div>
+
+  <div class="cta">
+    <a href="/admin">Open Admin Dashboard →</a>
+  </div>
+</div>
+
+<script>
+function setPayload(text) {
+  document.getElementById('search-input').value = text;
+}
+
+async function testSearch() {
+  const q = document.getElementById('search-input').value;
+  const el = document.getElementById('search-result');
+  try {
+    const r = await fetch('/search?q=' + encodeURIComponent(q));
+    const d = await r.json();
+    if (r.status === 403) {
+      el.className = 'result bad';
+      el.textContent = '🚫 BLOCKED — ' + d.error + ' [' + (d.category || '') + ']';
+    } else {
+      el.className = 'result ok';
+      el.textContent = '✓ ' + JSON.stringify(d);
+    }
+  } catch(e) {
+    el.className = 'result bad';
+    el.textContent = 'Error: ' + e.message;
+  }
+}
+
+async function testAttack() {
+  const payloads = ["' OR 1=1 --", "UNION SELECT password FROM users", "<script>alert(1)<\/script>", "../../etc/passwd", "; ls -la"];
+  document.getElementById('search-input').value = payloads[Math.floor(Math.random() * payloads.length)];
+  testSearch();
+}
+</script>
+</body>
+</html>
