@@ -1,7 +1,4 @@
-"""
-FlaskGuard - Main Application
-Web Application Firewall middleware + demo routes + admin dashboard
-"""
+
 
 from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_limiter import Limiter
@@ -203,6 +200,6 @@ def simulate_attacks():
 
 if __name__ == "__main__":
     print("🛡  FlaskGuard WAF starting...")
-    # print("   App:       http://127.0.0.1:5000")
-    # print("   Dashboard: http://127.0.0.1:5000/admin")
+    print("   App:       http://127.0.0.1:5000")
+    print("   Dashboard: http://127.0.0.1:5000/admin")
     app.run(debug=True, port=5000)

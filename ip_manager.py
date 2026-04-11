@@ -9,6 +9,7 @@ import threading
 from datetime import datetime, timedelta
 from collections import defaultdict
 
+
 BLACKLIST_FILE = os.path.join(os.path.dirname(__file__), "logs", "blacklist.json")
 THRESHOLD_STRIKES = 5          # auto-ban after 5 attacks
 BAN_DURATION_MINUTES = 60      # ban lasts 1 hour

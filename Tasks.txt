@@ -1,0 +1,5 @@
+ml model : add a machine Learning model  to learn from the previous suspicious request : Abdelmoghith 
+admin Dashboard + interface to send attacks :  amine
+block also files injection + encrypte the flow btw the middleware and server  : Benmouh Mohamed  
+make the flaskguard work for each site : Ayyoub
+test flaskguard for 3 sites and control the workflows btw its : Hamza

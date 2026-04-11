@@ -1,0 +1,488 @@
+# 🛡️ FlaskGuard WAF - Revised Presentation Outline
+
+## Slide 1: Title
+**FlaskGuard - Custom Web Application Firewall**
+Enterprise-grade security middleware for Flask applications
+
+---
+
+## Slide 2: Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         CLIENT REQUESTS                          │
+└─────────────────────────────────┬───────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    MIDDLEWARE LAYER (WAF)                        │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ IP Blacklist │─▶│   Regex      │─▶│   File       │          │
+│  │   Check      │  │  Detection   │  │  Inspection  │          │
+│  └──────────────┘  └──────┬───────┘  └──────────────┘          │
+│                           │                                      │
+│                           ▼                                      │
+│              ┌─────────────────────────┐                        │
+│              │  🚧 FUTURE: ML Classifier│                        │
+│              │  (Active Learning)       │                        │
+│              └─────────────────────────┘                        │
+└─────────────────────────────────────────────────────────────────┘
+                                  │
+                    ┌─────────────┴─────────────┐
+                    │                           │
+                    ▼                           ▼
+          ┌─────────────────┐         ┌─────────────────┐
+          │    BLOCKED      │              │     ALLOWED     │
+          │  403 Forbidden  │            │                 │
+          │  + Log Attack   │         │  + Forward to   │
+          └─────────────────┘         │    Target       │
+                                      └────────┬────────┘
+                                                │
+                                                ▼
+                                    ┌─────────────────────┐
+                                    │   TARGET SERVERS    │
+                                    │  (3 Sites to Test)  │
+                                    │  • Site A           │
+                                    │  • Site B           │
+                                    │  • Site C           │
+                                    └─────────────────────┘
+```
+
+---
+
+## Slide 3: What We Have Done ✅
+
+### Currently Implemented Components
+
+| Component | Technology | Status |
+|-----------|-----------|--------|
+| **Regex Detection Engine** | 30+ patterns (SQLi, XSS, Path Traversal, CMDi) | ✅ Complete |
+| **IP Blacklist Manager** | Auto-ban after 5 strikes, manual ban/unban | ✅ Complete |
+| **Attack Logger** | JSON + Python logging, last 500 events | ✅ Complete |
+| **File Inspection** | Extension/MIME validation, content scanning | ✅ Complete |
+
+### Detection Pipeline (Current)
+```
+Request → IP Blacklist → Regex Detection → File Inspection → Allow/Block
+```
+
+---
+
+## Slide 4: What We Have Done - Demo Features
+
+### Attack Detection Examples
+
+```bash
+# SQL Injection - BLOCKED ❌
+curl "http://localhost:5000/search?q=' OR 1=1 --"
+
+# XSS Attack - BLOCKED ❌  
+curl "http://localhost:5000/search?q=<script>alert(1)</script>"
+
+# Malicious File Upload - BLOCKED ❌
+curl -F "file=@malware.exe" http://localhost:5000/upload
+
+# Normal Request - ALLOWED ✅
+curl "http://localhost:5000/search?q=laptop"
+```
+
+### Current Capabilities Summary
+- **Regex Engine**: Detects known attack patterns instantly
+- **IP Reputation**: Auto-bans repeat offenders after 5 strikes
+- **File Protection**: Blocks dangerous file types at upload
+- **Audit Log**: Complete attack history for forensics
+
+---
+
+## Slide 5: What We Will Do - Phase 2 🚀
+
+### 1. ML Classifier (Self-Learning Model)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│          ACTIVE LEARNING PIPELINE - FUTURE IMPLEMENTATION    │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│   Suspicious Request ──▶ ML Prediction ──▶ Human Review    │
+│         │                              │                     │
+│         ▼                              ▼                     │
+│   Feature Extraction            Label as Attack/Normal       │
+│   (n-gram TF-IDF)                    │                       │
+│         │                              │                     │
+│         └──────────┬───────────────────┘                    │
+│                    ▼                                         │
+│            Retrain Model                                     │
+│         (Periodic/On-demand)                                 │
+│                    │                                         │
+│                    ▼                                         │
+│         Updated Model Deployed                               │
+│         (Catches obfuscated attacks)                        │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**ML Classifier Features (Planned):**
+
+| Feature | Description |
+|---------|-------------|
+| **Fallback Detection** | Catches what regex misses (obfuscated attacks) |
+| **Incremental Learning** | Retrains from new attack patterns automatically |
+| **False Positive Reduction** | Feedback loop to improve accuracy |
+| **Confidence Scoring** | Returns confidence level with each prediction |
+| **Model Versioning** | A/B test different models before deployment |
+
+**Benefits over regex-only:**
+- Detects zero-day attack variations
+- Adapts to new evasion techniques
+- Reduces false positives over time
+
+---
+
+### 2. Rate Limiting (Request Throttling)
+
+```
+Current (Basic):                      Future (Advanced):
+┌──────────────────┐             ┌──────────────────────────────┐
+│ 200 per day      │             │ Sliding Window Rate Limiting │
+│ 50 per hour      │      ──▶    │ Token Bucket Algorithm       │
+└──────────────────┘             │ Adaptive Throttling          │
+                                  │ Per-endpoint limits          │
+                                  │ Burst handling               │
+                                  │ Per-client quotas            │
+                                  └──────────────────────────────┘
+```
+
+**Rate Limiting Features (Planned):**
+
+| Feature | Description |
+|---------|-------------|
+| **Sliding Window** | More accurate than fixed window counters |
+| **Token Bucket** | Allows bursts while maintaining average rate |
+| **Adaptive Throttling** | Automatically adjusts limits during attacks |
+| **Per-Endpoint Limits** | Different limits for login, search, API, etc. |
+| **Global Limits** | Max requests/second across all clients |
+
+**Configuration Example:**
+```python
+RATE_LIMITS = {
+    "default": {"requests": 100, "window": 60},  # 100 req/min
+    "login": {"requests": 10, "window": 60},     # 10 req/min (brute force protection)
+    "search": {"requests": 200, "window": 60},   # 200 req/min
+    "admin": {"requests": 5, "window": 60},      # 5 req/min
+    "api": {"requests": 1000, "window": 60},     # 1000 req/min for API
+}
+```
+
+**Multi-Site Rate Limiting:**
+- Separate limits per protected site
+- Shared global limits across all sites
+- Real-time monitoring of rate limit violations
+
+---
+
+### 3. Admin Dashboard (Security Operations Center)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    ADMIN DASHBOARD - FUTURE UI                   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌───────────┐ │
+│  │ Total       │ │ Blocked     │ │ Active      │ │ Avg       │ │
+│  │ Attacks     │ │ Today       │ │ Bans        │ │ Response  │ │
+│  │ 1,247       │ │ 89          │ │ 12          │ │ 23ms      │ │
+│  └─────────────┘ └─────────────┘ └─────────────┘ └───────────┘ │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                    Attack Timeline                        │   │
+│  │  ████                                                    │   │
+│  │  ████████                                                │   │
+│  │  ██████████████                                          │   │
+│  │  ██████████████████████                                  │   │
+│  │  └─────────────────────────────────────────────────▶    │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                  │
+│  ┌─────────────────────┐  ┌─────────────────────────────────┐  │
+│  │ Top Attack Types    │  │ Top Attacking IPs               │  │
+│  │ • SQLi: 45%         │  │ • 192.168.1.10: 234 attacks    │  │
+│  │ • XSS: 30%          │  │ • 10.0.0.55: 189 attacks       │  │
+│  │ • Path Trav: 15%    │  │ • 172.16.0.3: 67 attacks       │  │
+│  │ • CMDi: 10%         │  │                                 │  │
+│  └─────────────────────┘  └─────────────────────────────────┘  │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │              Live Attack Log                             │   │
+│  │  [10:32:15] SQLi │ 192.168.1.10 │ /login │ Blocked      │   │
+│  │  [10:31:58] XSS  │ 10.0.0.55    │ /search│ Blocked      │   │
+│  │  [10:31:22] Normal│ 8.8.8.8     │ /      │ Allowed      │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │              Blacklist Management                        │   │
+│  │  [Ban IP] [Unban IP] [Import List] [Export Logs]         │   │
+│  └─────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Dashboard Features (Planned):**
+
+| Feature | Description |
+|---------|-------------|
+| **Real-time Metrics** | Live attack counters, rates, and trends |
+| **Interactive Charts** | Attack patterns over time (hour/day/week) |
+| **GeoIP Mapping** | Show attack origins on world map |
+| **Alert System** | Email/Slack notifications for large attacks |
+| **ML Training Interface** | Review misclassifications, retrain model |
+| **Rate Limit Configuration** | UI to adjust limits without restart |
+| **Multi-site View** | Switch between protected sites |
+| **Report Generation** | Export security reports (PDF/CSV) |
+
+---
+
+## Slide 6: Middleware as Intermediary for Multiple Sites
+
+```
+                         ┌─────────────────────────────────────┐
+                         │    FLASKGUARD MIDDLEWARE (Planned)   │
+                         │                                      │
+Client ──▶ ┌─────────────┤  • Rate Limiting (global + per site) │
+           │             │  • Request Throttling                │
+           ▼             │  • ML Classification                 │
+    ┌──────────┐         │  • Load Balancing                    │
+    │  Site A  │◀────────┤  • Health Checks                     │
+    └──────────┘         │  • Request/Response Transformation   │
+           │             └──────────────────────────────────────┘
+           ▼                                    │
+    ┌──────────┐                                │
+    │  Site B  │                                │
+    └──────────┘                                │
+           │                                     │
+           ▼                                     ▼
+    ┌──────────┐                         ┌──────────┐
+    │  Site C  │                         │ Metrics  │
+    └──────────┘                         │ & Logs   │
+                                         └──────────┘
+```
+
+**Multi-Site Features (Planned):**
+
+| Feature | Description |
+|---------|-------------|
+| **Reverse Proxy Mode** | Single entry point for multiple backends |
+| **Path-based Routing** | `/site1/*` → Site A, `/site2/*` → Site B |
+| **Host-based Routing** | `app1.example.com` → Site A |
+| **Load Balancing** | Round-robin, least connections, IP hash |
+| **Circuit Breaker** | Stop forwarding if backend is failing |
+| **Request Mirroring** | Copy traffic to test/analysis environment |
+| **Canary Deployments** | Route % of traffic to new version |
+
+**Testing Configuration:**
+```python
+BACKENDS = {
+    "site_a": {"host": "http://localhost:5001", "weight": 50, "limits": {"requests": 100}},
+    "site_b": {"host": "http://localhost:5002", "weight": 30, "limits": {"requests": 50}},
+    "site_c": {"host": "http://localhost:5003", "weight": 20, "limits": {"requests": 200}},
+}
+
+MAX_REQUESTS_PER_SECOND = {
+    "global": 1000,      # Total across all sites
+    "site_a": 100,       # Per second limit for Site A
+    "site_b": 50,        # Per second limit for Site B  
+    "site_c": 200,       # Per second limit for Site C
+}
+```
+
+---
+
+## Slide 7: Testing Strategy - Max Requests/Second
+
+### Load Testing Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        TEST ENVIRONMENT                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐    │
+│  │   Load       │────▶│ FlaskGuard   │────▶│   Site A     │    │
+│  │  Generator   │     │  Middleware  │     │  (Flask)     │    │
+│  │  (Locust)    │     │              │     │  :5001       │    │
+│  │              │     │              │     │              │    │
+│  │  - 10k users │     │  Rate Limit  │────▶│   Site B     │    │
+│  │  - Ramp up   │     │  ML Detect   │     │  (Django)    │    │
+│  │  - Constant  │     │  IP Blacklist│     │  :5002       │    │
+│  │    load      │     │              │     │              │    │
+│  └──────────────┘     │              │────▶│   Site C     │    │
+│                       │              │     │  (Express)   │    │
+│                       └──────────────┘     │  :5003       │    │
+│                                            └──────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Performance Metrics to Validate
+
+| Metric | Target | Testing Method |
+|--------|--------|----------------|
+| **Max requests/second (single site)** | 1000 req/s | Locust load test |
+| **Max requests/second (3 sites)** | 3000 req/s aggregated | Distributed load test |
+| **Latency added by WAF** | <10ms | Per-request timing |
+| **Concurrent connections** | 10,000+ | Connection pool test |
+| **Rate limiter accuracy** | ±1% error | Burst traffic test |
+| **ML classification time** | <5ms per request | Benchmark test |
+
+### Rate Limit Test Scenarios
+
+```python
+# Test 1: Burst handling
+Send 200 requests in 1 second → Should block 100 (if limit is 100 req/s)
+
+# Test 2: Sliding window accuracy  
+Send 100 req/s for 10 seconds → Should maintain exact limit
+
+# Test 3: Per-endpoint isolation
+Send 200 req/s to /login and 200 req/s to /search
+→ Login blocks at 10 req/s, Search allows 200 req/s
+
+# Test 4: Multi-site fairness
+Send heavy traffic to Site A → Should not affect Site B's limits
+```
+
+---
+
+## Slide 8: Technical Stack (Planned Additions)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   FLASKGUARD - FUTURE STACK                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│   CURRENT:                                                       │
+│   • Flask (Python)                                              │
+│   • JSON storage                                                │
+│   • Regex engine                                                │
+│                                                                  │
+│   PLANNED ADDITIONS:                                            │
+│   ┌─────────────────────────────────────────────────────────┐  │
+│   │ ML Layer:                                               │  │
+│   │ • scikit-learn (Naive Bayes, TF-IDF)                    │  │
+│   │ • joblib (model persistence)                            │  │
+│   │ • Redis (feature cache)                                 │  │
+│   ├─────────────────────────────────────────────────────────┤  │
+│   │ Rate Limiting:                                          │  │
+│   │ • Redis (distributed counters)                          │  │
+│   │ • Token bucket algorithm                                │  │
+│   │ • Sliding window implementation                         │  │
+│   ├─────────────────────────────────────────────────────────┤  │
+│   │ Dashboard:                                              │  │
+│   │ • React/Vue.js (frontend)                               │  │
+│   │ • WebSocket (real-time updates)                         │  │
+│   │ • Chart.js / D3 (visualizations)                       │  │
+│   │ • SQLite/PostgreSQL (persistent storage)               │  │
+│   └─────────────────────────────────────────────────────────┘  │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Slide 9: Roadmap - What We Will Do
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         PROJECT ROADMAP                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ✅ PHASE 1 (COMPLETE)                                               │
+│  ├── Regex attack detection (30+ patterns)                          │
+│  ├── IP blacklist with auto-ban                                     │
+│  ├── File upload inspection                                         │
+│  └── Attack logging system                                          │
+│                                                                      │
+│  🚧 PHASE 2 (IN DEVELOPMENT)                                        │
+│  ├── ML Classifier with active learning                             │
+│  ├── Advanced rate limiting (token bucket)                          │
+│  ├── Admin dashboard with real-time metrics                         │
+│  └── Multi-site proxy support                                       │
+│                                                                      │
+│  📅 PHASE 3 (PLANNED)                                               │
+│  ├── Distributed rate limiting (Redis cluster)                      │
+│  ├── Bot detection (CAPTCHA integration)                            │
+│  ├── API security (JWT validation, API keys)                        │
+│  ├── SIEM integration (Splunk, ELK)                                 │
+│  └── Kubernetes deployment (Helm chart)                             │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+
+Timeline:
+• Phase 2 Completion: 4-6 weeks
+• Phase 3 Planning: Q3 2024
+```
+
+---
+
+## Slide 10: Success Metrics
+
+### Performance Targets for Phase 2
+
+| Metric | Current | Target (Phase 2) |
+|--------|---------|------------------|
+| **Attack detection rate** | ~70% (regex only) | >95% (regex + ML) |
+| **False positive rate** | ~5% | <0.5% |
+| **Max requests/second** | Not measured | 1000+ req/s |
+| **ML classification time** | N/A | <5ms |
+| **Dashboard latency** | N/A | <500ms refresh |
+| **Multi-site support** | No | 3+ sites simultaneously |
+
+---
+
+## Slide 11: Demo Preview (Phase 2)
+
+### What You'll Be Able To Do
+
+```bash
+# 1. Train ML model on past attacks
+python train_model.py --data logs/attacks.json
+
+# 2. Configure rate limits per endpoint
+POST /admin/api/ratelimit
+{
+    "endpoint": "/login",
+    "requests": 10,
+    "window": 60,
+    "action": "block"
+}
+
+# 3. Add a new backend site
+POST /admin/api/backend
+{
+    "host": "http://localhost:5002",
+    "path": "/api/v2",
+    "rate_limit": 500
+}
+
+# 4. View real-time dashboard
+open http://localhost:5000/admin/dashboard
+
+# 5. Test max requests/second
+locust -f load_test.py --host http://localhost:5000
+```
+
+---
+
+## Slide 12: Questions & Discussion
+
+### Key Takeaways
+
+1. **Foundation Built** - Regex detection, IP blacklisting, file inspection working
+2. **ML is Next** - Self-learning model to catch what regex misses
+3. **Rate Limiting** - Protect against DDoS and brute force
+4. **Admin Dashboard** - Full visibility and control
+5. **Multi-site Ready** - Single WAF protecting multiple backends
+
+### Future Vision
+> A production-ready, open-source WAF that combines **signature-based detection** (regex) with **behavioral analysis** (ML) and **rate limiting** to protect any web application, with full observability through an admin dashboard.
+
+---
+
+**Thank You!** 🛡️
+
