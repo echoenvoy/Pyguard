@@ -112,5 +112,3 @@ curl "http://localhost:5000/search?q=laptop"
 | JSON log | SIEM integration |
 | Manual blacklist | Threat intelligence feeds |
 
-This is a **learning/portfolio project** demonstrating core WAF concepts.
-
